@@ -15,28 +15,31 @@ public class RecordStudio {
     public double getPrice(){
         return price;
     }
+
+    public double getMinPrice(){
+        return minPricePerHour;
+    }
+    public int getLeftHours(){
+        return leftHours;
+    }
+
     //Task 1
-    public String bookedStudio(Customer customer, int bookedHours) {
+    public int bookedStudio(Customer customer, int bookedHours) {
         if (bookedHours < maxBookedHoursPerDay) {
             int alreadyBooked = 0;
             alreadyBooked += bookedHours;
             leftHours = maxBookedHoursPerDay - bookedHours;
-            return "The studio is booked successfully";
+            return 1;
         }
         else {
-
-            return "You can't book the studio for " + bookedHours + ". The left hours are:" + leftHours;
+            return 0;
         }
     }
 
     //Task 2
-    public String changePrice(double newPrice) {
-        if (newPrice > minPricePerHour) {
-            price = newPrice;
-            return "You've changed the price successfully. The new price is: " + price;
-        } else {
-            return "You have to enter price bigger than " + minPricePerHour + " (minimal one)";
-        }
+    public double changePrice(double newPrice) {
+        price = newPrice;
+        return newPrice;
     }
     //Task 3
     public double profitPerDay (){

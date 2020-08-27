@@ -11,4 +11,7 @@ public class Director {
     public int getAge(){
         return age;
     }
+    public String getDirectorName(){
+        return directorName;
+    }
 }
